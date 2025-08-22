@@ -119,6 +119,17 @@ sudo ufw status
   ```bash
   sudo apt install tomcat9 -y
   ```
+🛠️ Apache Maven Installation (Ubuntu 24.04 Noble)
+Apache Maven is required to build and manage your Java project (pom.xml).
+
+🔧 Install Maven
+
+✅ Verify Installation
+```bash
+
+sudo apt update
+sudo apt install maven -
+```
 
 ---
 
