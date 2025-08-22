@@ -28,24 +28,87 @@ This guide explains how to set up and deploy your Java web application using **G
   sudo apt install git -y
   ```
 
-### 2. Java (Required for Jenkins)
-- **Purpose**: Jenkins is a Java-based application.
-- **Install**:
-  ```bash
-  sudo apt install openjdk-11-jdk -y
-  ```
 
-### 3. Jenkins
-- **Purpose**: Automate build and test processes.
-- **Install**:
-  ```bash
-  wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
-  sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
-  sudo apt update
-  sudo apt install jenkins -y
-  sudo systemctl start jenkins
-  sudo systemctl enable jenkins
-  ```
+### 2. Here's a complete and properly formatted section you can include in your **README.md** file for installing Jenkins and Java on **Ubuntu 24.04 (Noble)**:
+
+---
+
+## 🚀 Jenkins and Java Installation Guide (Ubuntu 24.04 Noble)
+
+This guide walks you through installing **OpenJDK 17** and **Jenkins** on Ubuntu 24.04, including fixing GPG key issues and enabling the Jenkins service.
+
+---
+
+### 🔧 Step 1: Install Java (OpenJDK 17)
+
+Jenkins requires Java to run. Install OpenJDK 17:
+
+```bash
+sudo apt update
+sudo apt install openjdk-17-jre -y
+java --version
+```
+
+---
+
+### 🔐 Step 2: Add Jenkins Repository and GPG Key
+
+Fix the GPG key issue and add the Jenkins repository:
+
+```bash
+# Download the updated Jenkins GPG key
+sudo wget -O /usr/share/keyrings/jenkins-keyring.asc https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+
+# Add Jenkins repository
+echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/" | \
+  sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
+```
+
+---
+
+### 📦 Step 3: Install Jenkins
+
+```bash
+sudo apt update
+sudo apt install jenkins -y
+```
+
+---
+
+### ▶️ Step 4: Start and Enable Jenkins Service
+
+```bash
+sudo systemctl start jenkins
+sudo systemctl enable jenkins
+```
+
+---
+
+### 🌐 Step 5: Access Jenkins Web Interface
+
+Open your browser and go to:
+
+```
+http://<your-server-ip>:8080
+```
+
+To retrieve the initial admin password:
+
+```bash
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+```
+
+---
+
+### 🔥 Optional: Allow Jenkins Port Through Firewall
+
+If UFW is enabled:
+
+```bash
+sudo ufw allow 8080/tcp
+sudo ufw enable
+sudo ufw status
+```
 
 ###  and inventory files.
 - **Install**:
@@ -53,7 +116,7 @@ This guide explains how to set up and deploy your Java web application using **G
   sudo apt install ansible -y
   ```
 
-### 5. Apache Tomcat
+### 3. Apache Tomcat
 - **Purpose**: Host and run your Java web application (WAR file).
 - **Install**:
   ```bash
