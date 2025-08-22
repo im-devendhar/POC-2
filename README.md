@@ -28,9 +28,6 @@ This guide explains how to set up and deploy your Java web application using **G
   sudo apt install git -y
   ```
 
-
-### 2. Here's a complete and properly formatted section you can include in your **README.md** file for installing Jenkins and Java on **Ubuntu 24.04 (Noble)**:
-
 ---
 
 ## 🚀 Jenkins and Java Installation Guide (Ubuntu 24.04 Noble)
