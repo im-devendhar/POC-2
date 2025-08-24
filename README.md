@@ -136,8 +136,10 @@ sudo apt install maven -
 
 ---
 
-After all this steps we access the application at http://<IP Adress>/:8081
-
+After all this steps we access the application at  
+  ```bash
+http://<IP Adress>/:8081
+  ```
 ##  Deployment Flow
 
 1. **Code Commit** → Git
