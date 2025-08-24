@@ -17,13 +17,14 @@
       when: ansible_os_family == "Debian"
 
     - name: Copy WAR file to Tomcat webapps
-      copy:
-        src: target/poc-demo.war
-        dest: /var/lib/tomcat9/webapps/poc-demo.war
-        owner: tomcat
-        group: tomcat
-        mode: '0644'
+   copy:
+     src: target/POC-2.war
+     dest: /var/lib/tomcat9/webapps/POC-2.war
+     owner: tomcat
+     group: tomcat
+     mode: '0644'
 
+  
     - name: Restart Tomcat
       service:
         name: tomcat9
