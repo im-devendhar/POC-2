@@ -1,5 +1,7 @@
-[myservers]
-localhost ansible_connection=local
+# [myservers]
+# localhost ansible_connection=local
 
-#[myservers]
-#<EC2_PUBLIC_IP> ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/my-key.pem
+# [myservers]
+# 18.232.108.45 ansible_user=ubuntu ansible_ssh_private_key_file="/c/Users/DEVENDHAR B/Downloads/Dev.pem"
+[myservers]
+18.232.108.45 ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/dev.pem
