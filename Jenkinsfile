@@ -21,10 +21,14 @@ pipeline {
         }
 
         stage('Deploy with Ansible') {
-            steps {
-                sh 'ansible-playbook -i inventory deploy.yml'
-            }
-        }
+    steps {
+        sh '''
+        export ANSIBLE_HOST_KEY_CHECKING=False
+        ansible-playbook -i inventory deploy.yml
+        '''
+    }
+}
+
     }
 
     post {
