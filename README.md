@@ -3,7 +3,7 @@
 
 #  Deployment Guide for Java Web Application on AWS EC2
 
-This guide explains how to set up and deploy your Java web application using **Git**, **Jenkins**, **Ansible**, and **Apache Tomcat** on an AWS EC2 instance.
+ Setting up and deploying your Java web application using **Git**, **Jenkins**, **Ansible**, and **Apache Tomcat** on an AWS EC2 instance.
 <img width="779" height="286" alt="image" src="https://github.com/user-attachments/assets/112a3e62-6915-4cfa-b2cc-875569f3a878" />
 
 ---
@@ -135,6 +135,8 @@ sudo apt install maven -
 ```
 
 ---
+
+After all this steps we access the application at http://<IP Adress>/:8081
 
 ##  Deployment Flow
 
